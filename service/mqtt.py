@@ -38,9 +38,10 @@ class MQTTService:
             # client_id is the given name of the client
             client = paho.Client(client_id="", userdata=None, protocol=paho.MQTTv5)
             client.on_connect = self.on_connect
+            # client.tls_set(ca_certs="/etc/ssl/certs/ca-certificates.crt")
 
             # enable TLS for secure connection
-            client.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
+            client.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS, ca_certs="/etc/ssl/certs/ca-certificates.crt")
             # set username and password
             client.username_pw_set("smaglator", "smaglatorkey")
             return client
