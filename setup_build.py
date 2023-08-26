@@ -5,7 +5,7 @@ from cx_Freeze import setup, Executable
 packages = ["pandas", "numpy", "sklearn"]
 # files = ["./app/client/assets/", "./app/client/model/", "./app/client/service/"]
 build_exe_options = {
-    "excludes": ["pyinstaller", "unittest"],
+    "excludes": ["pyinstaller"],
     "packages": packages,
     # "include_files": files,
     # "zip_include_packages": ["encodings", "PySide6"],
